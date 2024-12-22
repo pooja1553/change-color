@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Color</title>
+    <style>
+        body{
+            background-color: rgb(255, 225, 179);
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            flex-wrap: wrap;
+            margin-top: 250px;
+          }
+        .container{
+            border: 2px solid black;
+            height: 200px;
+            width: 200px;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: white;
+         }
+        .box{
+            border: 2px solid grey;
+            height: 50px;
+            width: 50px;
+            margin: 10px;
+        }
+        .color{
+            display: grid;
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 10px;
+            background-color: white;
+            gap: 5px;
+        }
+        .button{
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          button{
+            cursor: pointer;
+            background-color: rgb(61, 61, 250);
+            color: white;
+            width: 100px;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+          }
+          @media only screen and (min-width:200px) and (max-width:470px){
+            .main{
+                margin-top: 10px;
+            }
+          }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="container">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+    </div>
+    <div class="color">
+    <label for="one">Enter color for box 1</label>
+    <input type="text">
+    <label for="one">Enter color for box 2</label>
+    <input type="text">
+    <label for="one">Enter color for box 3</label>
+    <input type="text">
+</div>
+
+</div>
+<div class="button">
+<button onclick="changeColor()">color</button>
+</div>
+</body>
+<script>
+    
+      function changeColor(){
+        let container = document.body.firstElementChild.children[0];
+        let box1 = container.children[0];
+        let box2 = container.children[1];
+        let box3 = container.children[2];
+    
+        let color = document.body.firstElementChild.children[1];
+        let c1 = color.children[1].value;
+        let c2 = color.children[3].value;
+        let c3 = color.children[5].value;
+
+        let a1 =  box1.style.backgroundColor = `${c1}`;
+        let a2 =  box2.style.backgroundColor = `${c2}`;
+        let a3 =  box3.style.backgroundColor = `${c3}`;
+     
+     }
+</script>
+</html>
